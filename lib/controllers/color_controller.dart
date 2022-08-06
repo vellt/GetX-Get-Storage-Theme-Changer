@@ -36,7 +36,7 @@ class ColorController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _isDarkMode.value = _box.read('darkmode');
+    _isDarkMode.value = _box.read('darkmode') ?? false;;
     ever(_isDarkMode, (_) => print("is dark mode on: $_"));
   }
 }
