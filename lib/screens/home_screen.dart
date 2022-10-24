@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 theme.setTheme(theme: Themes.next);
               },
-              child: Icon(theme.icon.themeIcon, color: theme.color.mainText),
+              child: Icon(theme.icon.theme, color: theme.color.mainText),
             ), // This trailing comma makes auto-formatting nicer for build methods.
           );
         });

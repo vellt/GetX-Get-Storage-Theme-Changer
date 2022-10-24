@@ -5,5 +5,5 @@ class IconBox {
 
   IconBox(this.isDarkMode);
 
-  IconData get themeIcon => (!isDarkMode) ? Icons.dark_mode : Icons.light_mode;
+  IconData get theme => (!isDarkMode) ? Icons.dark_mode : Icons.light_mode;
 }
