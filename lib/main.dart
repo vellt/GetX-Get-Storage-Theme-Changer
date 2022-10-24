@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:Theme/screens/home_screen.dart';
 
+import 'controllers/theme_controller.dart';
 import 'global.dart';
 
 void main() async {
