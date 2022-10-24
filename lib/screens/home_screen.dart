@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../controllers/theme_controller.dart';
 import '../global.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,8 +9,17 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       return Scaffold(
-        backgroundColor: color.background,
-        appBar: AppBar(),
+        backgroundColor: theme.backgroundColor,
+        appBar: AppBar(
+          elevation: 0,
+          shadowColor: Colors.transparent,
+          backgroundColor: theme.mainBackgroundColor,
+          title: Text(
+            "Theme",
+            style: TextStyle(color: theme.mainTextColor),
+          ),
+          centerTitle: true,
+        ),
         body: Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
@@ -18,20 +28,22 @@ class HomeScreen extends StatelessWidget {
             children: <Widget>[
               TextButton(
                   onPressed: () {
-                    color.changeTheme();
+                    theme.setTheme(theme: Themes.next);
                   },
                   child: Text(
                     'Change Theme',
-                    style: TextStyle(color: color.mainText),
+                    style: TextStyle(color: theme.mainTextColor),
                   )),
             ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: color.mainButton,
-          onPressed: () {},
-          tooltip: 'Increment',
-          child: Icon(Icons.add, color: color.mainText),
+          elevation: 0,
+          backgroundColor: theme.mainBackgroundColor,
+          onPressed: () {
+            theme.setTheme(theme: Themes.next);
+          },
+          child: Icon(theme.themeIcon, color: theme.mainTextColor),
         ), // This trailing comma makes auto-formatting nicer for build methods.
       );
     });

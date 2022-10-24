@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:spice/screens/home_screen.dart';
+import 'package:Theme/screens/home_screen.dart';
 
 import 'global.dart';
 
@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
     return SimpleBuilder(builder: (_) {
       return GetMaterialApp(
         title: 'Theme',
-        theme: color.currentTheme,
+        debugShowCheckedModeBanner: false,
+        theme: theme.lightTheme,
+        darkTheme: theme.darkTheme,
         home: HomeScreen(),
       );
     });
